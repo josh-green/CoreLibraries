@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{E41CD12C-805C-4493-A45A-9BC917D7B240}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WebApplications.Testing</RootNamespace>
+    <AssemblyName>WebApplications.Testing</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)..\Common.proj" />
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\Annotations.cs" />
+    <Compile Include="Data\ColumnDefinition.cs" />
+    <Compile Include="Data\ExceptionRecord.cs" />
+    <Compile Include="Data\Exceptions\SqlConversionException.cs" />
+    <Compile Include="Data\Exceptions\SqlNullException.cs" />
+    <Compile Include="Data\Exceptions\SqlDatabaseException.cs" />
+    <Compile Include="Data\Exceptions\SqlIdentityColumnValueException.cs" />
+    <Compile Include="Data\Exceptions\SqlInvalidObjectException.cs" />
+    <Compile Include="Data\Exceptions\SqlInvalidColumnException.cs" />
+    <Compile Include="Data\Exceptions\SqlInvalidSyntaxException.cs" />
+    <Compile Include="Data\Exceptions\SqlEventSessionStoppedException.cs" />
+    <Compile Include="Data\Exceptions\SqlInvalidConnectionException.cs" />
+    <Compile Include="Data\Exceptions\InvalidUserOrDatabaseException.cs" />
+    <Compile Include="Data\IObjectRecord.cs" />
+    <Compile Include="Data\IObjectSet.cs" />
+    <Compile Include="Data\ObjectRecord.cs" />
+    <Compile Include="Data\ObjectReader.cs" />
+    <Compile Include="Data\ObjectSet.cs" />
+    <Compile Include="Data\RandomSet.cs" />
+    <Compile Include="Data\RecordSetDefinition.cs" />
+    <Compile Include="Data\SqlErrorCollectionPrototype.cs" />
+    <Compile Include="Data\SqlErrorPrototype.cs" />
+    <Compile Include="Data\SqlExceptionPrototype.cs" />
+    <Compile Include="Data\SqlUdtInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TestDatabaseBase.cs" />
+    <Compile Include="Tester.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
