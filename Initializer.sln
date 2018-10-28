@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer", "Initializer\WebApplications.Utilities.Initializer.csproj", "{3626816D-EB33-4ED0-AF95-FD7CA6C6D99A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer", "src\WebApplications.Utilities.Initializer\WebApplications.Utilities.Initializer.csproj", "{3626816D-EB33-4ED0-AF95-FD7CA6C6D99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer.Test", "Initializer\Test\WebApplications.Utilities.Initializer.Test.csproj", "{1F4CFF76-3151-460B-B1A4-2E77EEF20029}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer.Test", "src\WebApplications.Utilities.Initializer\Test\WebApplications.Utilities.Initializer.Test.csproj", "{1F4CFF76-3151-460B-B1A4-2E77EEF20029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer.TestApp", "Initializer\TestApp\WebApplications.Utilities.Initializer.TestApp.csproj", "{B32CE846-8FAF-4B89-9A17-22B4427133C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.Initializer.TestApp", "src\WebApplications.Utilities.Initializer\TestApp\WebApplications.Utilities.Initializer.TestApp.csproj", "{B32CE846-8FAF-4B89-9A17-22B4427133C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73FDA02C-149C-41C2-A80C-C011015CCE0F}"
 	ProjectSection(SolutionItems) = preProject
-		Initializer\InjectModuleInitializer.targets = Initializer\InjectModuleInitializer.targets
-		Utilities\WebApplications.Utilities.nuspec = Utilities\WebApplications.Utilities.nuspec
-		Utilities\WebApplications.Utilities.targets = Utilities\WebApplications.Utilities.targets
+		src\WebApplications.Utilities.Initializer\InjectModuleInitializer.targets = src\WebApplications.Utilities.Initializer\InjectModuleInitializer.targets
+		src\WebApplications.Utilities.Utilities\WebApplications.Utilities.nuspec = src\WebApplications.Utilities.Utilities\WebApplications.Utilities.nuspec
+		src\WebApplications.Utilities.Utilities\WebApplications.Utilities.targets = src\WebApplications.Utilities.Utilities\WebApplications.Utilities.targets
 	EndProjectSection
 EndProject
 Global

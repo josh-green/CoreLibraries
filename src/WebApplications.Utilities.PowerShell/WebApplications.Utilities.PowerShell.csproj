@@ -35,7 +35,7 @@
     <Compile Include="Zip.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931C698-6123-49BC-81FD-F72A4C1415EA}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>

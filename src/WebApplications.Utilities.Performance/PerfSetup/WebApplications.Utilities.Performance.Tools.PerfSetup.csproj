@@ -95,7 +95,7 @@
       <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-      <Compile Include="../../Utilities/Annotations/Annotations.cs" />
+      <Compile Include="../../WebApplications.Utilities/Annotations/Annotations.cs" />
       <Compile Include="Level.cs" />
       <Compile Include="Logger.cs" />
       <Compile Include="Options.cs" />

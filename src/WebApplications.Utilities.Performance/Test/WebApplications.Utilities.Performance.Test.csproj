@@ -39,7 +39,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>

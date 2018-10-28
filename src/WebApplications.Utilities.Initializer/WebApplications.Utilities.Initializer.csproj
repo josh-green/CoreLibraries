@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ModuleInitializer.cs.pp" />
-    <Compile Include="..\Utilities\Annotations\Annotations.cs">
+    <Compile Include="..\WebApplications.Utilities\Annotations\Annotations.cs">
       <Link>Annotations.cs</Link>
     </Compile>
     <Compile Include="Injector.cs" />

@@ -59,15 +59,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Performance\WebApplications.Utilities.Performance.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities.Performance\WebApplications.Utilities.Performance.csproj">
       <Project>{04220e31-53f6-453f-80c5-0e2d49776d36}</Project>
       <Name>WebApplications.Utilities.Performance</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Testing\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{e41cd12c-805c-4493-a45a-9bc917d7b240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>

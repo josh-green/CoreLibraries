@@ -113,7 +113,7 @@
     <Compile Include="UtilitiesTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Testing\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{e41cd12c-805c-4493-a45a-9bc917d7b240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>

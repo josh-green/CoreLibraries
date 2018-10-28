@@ -42,11 +42,11 @@
     <Compile Include="TestSingleDateSchedule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Testing\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{e41cd12c-805c-4493-a45a-9bc917d7b240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>

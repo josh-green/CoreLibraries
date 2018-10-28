@@ -68,11 +68,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\WebApplications.Utilities.Logging.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities.Logging\WebApplications.Utilities.Logging.csproj">
       <Project>{0eba7604-0bdb-438e-967f-7dfe93e6abd5}</Project>
       <Name>WebApplications.Utilities.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>

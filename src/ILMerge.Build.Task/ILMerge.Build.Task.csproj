@@ -16,7 +16,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="../Utilities/Annotations/Annotations.cs" />
+    <Compile Include="../WebApplications.Utilities/Annotations/Annotations.cs" />
     <Compile Include="ILMerge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -27,7 +27,7 @@
   <Target Name="CopyILMergeExeLocal" BeforeTargets="AfterBuild">
     <!-- Find the ILMerge tools, look in nuget packages first, then use included version. -->
     <ItemGroup Condition="!Exists('$(ILMergeTool)')">
-      <ILMergePackage Include="$(SlnDir)packages\ilmerge.*\tools\ILMerge.exe" />
+      <ILMergePackage Include="$(SlnDir)..\packages\ilmerge.*\tools\ILMerge.exe" />
     </ItemGroup>
     <PropertyGroup Condition="!Exists('$(ILMergeTool)') AND '@(ILMergePackage)'!=''">
       <ILMergeTool>@(ILMergePackage)</ILMergeTool>

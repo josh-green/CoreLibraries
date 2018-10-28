@@ -16,7 +16,7 @@
       <SlnDir>$(MSBuildThisFileDirectory)</SlnDir>
       <SlnDir Condition="!HasTrailingSlash('$(SlnDir)')">$(SlnDir)\</SlnDir>
       <SolutionDir>$(SlnDir)</SolutionDir>
-      <ResourcesPath>$(SlnDir)Utilities\Resources\</ResourcesPath>
+      <ResourcesPath>$(SlnDir)WebApplications.Utilities\Resources\</ResourcesPath>
     </PropertyGroup>
 
     <!-- Configuration specific properties -->
@@ -46,7 +46,7 @@
 
     <PropertyGroup Condition="'$(Configuration)' == 'NuGet'">
       <BuildPackage>true</BuildPackage>
-      <PackageOutputDir>$(SlnDir)nugets</PackageOutputDir>
+      <PackageOutputDir>$(SlnDir)..\nugets</PackageOutputDir>
       <IsRelease>true</IsRelease>
       <RunSignTool>true</RunSignTool>
     </PropertyGroup>
@@ -112,58 +112,58 @@
 
     <!-- Import utilities if Utilities is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('Utilities'))">
-      <UtilityBuildTasks>$(SlnDir)Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
+      <UtilityBuildTasks>$(SlnDir)WebApplications.Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
     </PropertyGroup>
     <ItemGroup Condition="'$(UtilityBuildTasks)'!='' AND !Exists('$(UtilityBuildTasks)')">
-      <ProjectsToBuild Include="$(SlnDir)Utilities\BuildTasks\WebApplications.Utilities.BuildTasks.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities\BuildTasks\WebApplications.Utilities.BuildTasks.csproj">
         <Properties>Configuration=Release;Platform=AnyCPU</Properties>
       </ProjectsToBuild>
     </ItemGroup>
-    <Import Project="$(SlnDir)Utilities\WebApplications.Utilities.targets" Condition="$(DefineConstants.Contains('Utilities'))" />
+    <Import Project="$(SlnDir)WebApplications.Utilities\WebApplications.Utilities.targets" Condition="$(DefineConstants.Contains('Utilities'))" />
 
     <!-- Import ILMerge if ILMerge is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('ILMerge'))">
-      <ILMergeBuildTask>$(SlnDir)ILMerge\bin\Release\AnyCPU\ILMerge.Build.Task.dll</ILMergeBuildTask>
-      <ILMergeTool>$(SlnDir)ILMerge\bin\Release\AnyCPU\ILMerge.exe</ILMergeTool>
+      <ILMergeBuildTask>$(SlnDir)ILMerge.Build.Task\bin\Release\AnyCPU\ILMerge.Build.Task.dll</ILMergeBuildTask>
+      <ILMergeTool>$(SlnDir)ILMerge.Build.Task\bin\Release\AnyCPU\ILMerge.exe</ILMergeTool>
     </PropertyGroup>
     <ItemGroup Condition="'$(ILMergeBuildTask)'!='' AND !Exists('$(ILMergeBuildTask)')">
-      <ProjectsToBuild Include="$(SlnDir)ILMerge\ILMerge.Build.Task.csproj">
+      <ProjectsToBuild Include="$(SlnDir)ILMerge.Build.Task\ILMerge.Build.Task.csproj">
         <Properties>Configuration=Release;Platform=AnyCPU</Properties>
       </ProjectsToBuild>
     </ItemGroup>
-    <Import Project="$(SlnDir)ILMerge\ILMerge.targets" Condition="$(DefineConstants.Contains('ILMerge'))" />
+    <Import Project="$(SlnDir)ILMerge.Build.Task\ILMerge.targets" Condition="$(DefineConstants.Contains('ILMerge'))" />
 
     <!-- Import module initializer if ModuleInitializer is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('ModuleInitializer'))">
-      <InjectModuleInitializerTool>$(SlnDir)Initializer\bin\Release\AnyCPU\Merged\WebApplications.Utilities.Initializer.dll</InjectModuleInitializerTool>
+      <InjectModuleInitializerTool>$(SlnDir)WebApplications.Utilities.Initializer\bin\Release\AnyCPU\Merged\WebApplications.Utilities.Initializer.dll</InjectModuleInitializerTool>
     </PropertyGroup>
     <ItemGroup Condition="'$(InjectModuleInitializerTool)'!='' AND !Exists('$(InjectModuleInitializerTool)')">
-      <ProjectsToBuild Include="$(SlnDir)Initializer\WebApplications.Utilities.Initializer.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Initializer\WebApplications.Utilities.Initializer.csproj">
         <Properties>Configuration=Release;Platform=AnyCPU</Properties>
       </ProjectsToBuild>
     </ItemGroup>
-    <Import Project="$(SlnDir)Initializer\InjectModuleInitializer.targets" Condition="$(DefineConstants.Contains('ModuleInitializer'))" />
+    <Import Project="$(SlnDir)WebApplications.Utilities.Initializer\InjectModuleInitializer.targets" Condition="$(DefineConstants.Contains('ModuleInitializer'))" />
 
     <!-- Import PerfSetup if the PerfSetup constant is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('PerfSetup'))">
-      <PerfSetupTool>$(SlnDir)Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
-      <PerfSetupTool64>$(SlnDir)Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool64>
+      <PerfSetupTool>$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
+      <PerfSetupTool64>$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool64>
     </PropertyGroup>
     <ItemGroup Condition="'$(PerfSetupTool)'!='' AND !Exists('$(PerfSetupTool)')">
-      <ProjectsToBuild Include="$(SlnDir)Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
         <Properties>Configuration=Release;Platform=x86</Properties>
       </ProjectsToBuild>
     </ItemGroup>
     <ItemGroup Condition="'$(PerfSetupTool64)'!='' AND !Exists('$(PerfSetupTool64)')">
-      <ProjectsToBuild Include="$(SlnDir)Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
         <Properties>Configuration=Release;Platform=x64</Properties>
       </ProjectsToBuild>
     </ItemGroup>
-    <Import Project="$(SlnDir)Performance\WebApplications.Utilities.Performance.targets" Condition="$(DefineConstants.Contains('PerfSetup'))" />
+    <Import Project="$(SlnDir)WebApplications.Utilities.Performance\WebApplications.Utilities.Performance.targets" Condition="$(DefineConstants.Contains('PerfSetup'))" />
 
     <!-- Copy resources if CopyResources is defined -->
     <ItemGroup Condition="$(DefineConstants.Contains('CopyResources'))">
-      <ResourceFiles Include="$(SlnDir)Utilities\Resources\**\*" />
+      <ResourceFiles Include="$(SlnDir)WebApplications.Utilities\Resources\**\*" />
     </ItemGroup>
     
     <!-- When running from internal build server, this will digitally sign dlls -->
@@ -176,11 +176,11 @@
     <!-- Setup nugets folder -->
     <Target Name="SetupNuGetsDirTarget" Condition="'$(Configuration)' == 'NuGet'" BeforeTargets="BuildPackage">
       <!-- Ensure we have a nugets folder -->
-      <MakeDir Directories="$(SlnDir)nugets" Condition="!Exists('$(SlnDir)nugets')" />
+      <MakeDir Directories="$(SlnDir)..\nugets" Condition="!Exists('$(SlnDir)..\nugets')" />
       
       <!-- Check for existing packages matching this one and delete -->
       <ItemGroup>
-        <DeletePackage Include="$(SlnDir)nugets\$([System.IO.Path]::GetFileNameWithoutExtension('$(ProjectPath)'))*.nupkg" />
+        <DeletePackage Include="$(SlnDir)..\nugets\$([System.IO.Path]::GetFileNameWithoutExtension('$(ProjectPath)'))*.nupkg" />
       </ItemGroup>
       <Delete Files="@(DeletePackage)" Condition="'@(DeletePackage)' != ''" />
     </Target>
@@ -192,11 +192,11 @@
 
       <!-- Reset tool locations -->
       <PropertyGroup>
-        <UtilityBuildTasks Condition="$(DefineConstants.Contains('Utilities'))">$(SlnDir)Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
-        <ILMergeBuildTask Condition="$(DefineConstants.Contains('ILMerge'))">$(SlnDir)ILMerge\bin\Release\AnyCPU\ILMerge.Build.Task.dll</ILMergeBuildTask>
-        <InjectModuleInitializerTool Condition="$(DefineConstants.Contains('ModuleInitializer'))">$(SlnDir)Initializer\bin\Release\AnyCPU\Merged\WebApplications.Utilities.Initializer.dll</InjectModuleInitializerTool>
-        <PerfSetupTool Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
-        <PerfSetupTool64 Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)Performance\PerfSetup\bin\Release\Merged\PerfSetup64.exe</PerfSetupTool64>
+        <UtilityBuildTasks Condition="$(DefineConstants.Contains('Utilities'))">$(SlnDir)WebApplications.Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
+        <ILMergeBuildTask Condition="$(DefineConstants.Contains('ILMerge'))">$(SlnDir)ILMerge.Build.Tasks\bin\Release\AnyCPU\ILMerge.Build.Task.dll</ILMergeBuildTask>
+        <InjectModuleInitializerTool Condition="$(DefineConstants.Contains('ModuleInitializer'))">$(SlnDir)WebApplications.Utilities.Initializer\bin\Release\AnyCPU\Merged\WebApplications.Utilities.Initializer.dll</InjectModuleInitializerTool>
+        <PerfSetupTool Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
+        <PerfSetupTool64 Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup64.exe</PerfSetupTool64>
       </PropertyGroup>
 
       <!-- Verify pre-requisits -->

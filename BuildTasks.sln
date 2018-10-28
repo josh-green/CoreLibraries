@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.BuildTasks", "Utilities\BuildTasks\WebApplications.Utilities.BuildTasks.csproj", "{CA6C3C0E-96DB-4B74-A8E4-33ABA73D0553}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplications.Utilities.BuildTasks", "src\WebApplications.Utilities\BuildTasks\WebApplications.Utilities.BuildTasks.csproj", "{CA6C3C0E-96DB-4B74-A8E4-33ABA73D0553}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
