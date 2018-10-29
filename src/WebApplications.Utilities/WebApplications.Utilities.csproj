@@ -1,416 +1,168 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- TODO: Targets file, what is the format / compatibility? -->
+
   <PropertyGroup>
-    <ProjectGuid>{2931C698-6123-49BC-81FD-F72A4C1415EA}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>WebApplications.Utilities</RootNamespace>
-    <AssemblyName>WebApplications.Utilities</AssemblyName>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <DefineConstants>ModuleInitializer;Utilities</DefineConstants>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DownloadTZDB>True</DownloadTZDB>
     <DownloadISO4217>True</DownloadISO4217>
   </PropertyGroup>
+
   <Import Project="$(MSBuildThisFileDirectory)..\Common.proj" />
+
   <ItemGroup>
-    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="NodaTime" Version="2.4.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+    <PackageReference Include="System.Runtime.Caching" Version="4.5.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Accessor.cs" />
-    <Compile Include="Annotations\Annotations.cs" />
-    <Compile Include="AssemblySemanticVersionAttribute.cs" />
-    <Compile Include="Blit\Blittable2.cs" />
-    <Compile Include="Blit\Blittable4.cs" />
-    <Compile Include="Blit\Blittable8.cs" />
-    <Compile Include="Blit\Blittable16.cs" />
-    <Compile Include="Caching\WeakSingleton.cs" />
-    <Compile Include="CharComparer.cs" />
-    <Compile Include="Configuration\ConfigurationElement - Common.cs" />
-    <Compile Include="ConfigurationExtensions.cs" />
-    <Compile Include="Configuration\IConfigurationElement.cs" />
-    <Compile Include="Configuration\IConfigurationSection.cs" />
-    <Compile Include="Configuration\IInternalConfigurationElement.cs" />
-    <Compile Include="Configuration\IInternalConfigurationSection.cs" />
-    <Compile Include="Configuration\Propogate Common Configuration Element Code.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Propogate Common Configuration Element Code.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\CalendarSystemConverter.cs" />
-    <Compile Include="Converters\DateTimeZoneConverter.cs" />
-    <Compile Include="Converters\MailAddressCollectionConverter.cs" />
-    <Compile Include="Converters\MailAddressConverter.cs" />
-    <Compile Include="Converters\SecureStringConverter.cs" />
-    <Compile Include="Converters\XNamespaceConverter.cs" />
-    <Compile Include="Converters\DurationConverter.cs" />
-    <Compile Include="Converters\InstantConverter.cs" />
-    <Compile Include="Converters\LocalDateTimeConverter.cs" />
-    <Compile Include="Converters\PeriodConverter.cs" />
-    <Compile Include="Converters\SimplifiedTypeNameConverter.cs" />
-    <Compile Include="Converters\ZonedDateTimeConverter.cs" />
-    <Compile Include="Configuration\ConfigurationFileWatcher.cs" />
-    <Compile Include="Actions.cs">
-      <DependentUpon>Actions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Configuration\Validators\DurationValidator.cs" />
-    <Compile Include="Configuration\Validators\DurationValidatorAttribute.cs" />
-    <Compile Include="Difference\Chunk.cs" />
-    <Compile Include="DifferenceExtensions.cs" />
-    <Compile Include="Difference\Differences.cs" />
-    <Compile Include="Difference\StringChunk.cs" />
-    <Compile Include="Difference\StringDifferences.cs" />
-    <Compile Include="Difference\TextOptions.cs" />
-    <Compile Include="Formatting\Writeable.cs" />
-    <Compile Include="Funcs.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Funcs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Globalization\BclCultureInfoProvider.cs" />
-    <Compile Include="BigArray.cs" />
-    <Compile Include="Caching\CachingDictionaryBase.cs" />
-    <Compile Include="Caching\CachingQueue.cs" />
-    <Compile Include="Caching\ConcurrentLookup.cs" />
-    <Compile Include="Caching\DictionaryEnumerator.cs" />
-    <Compile Include="Caching\IObservableFinalize.cs" />
-    <Compile Include="Caching\CyclicConcurrentQueue.cs" />
-    <Compile Include="Caching\WeakConcurrentLookup.cs" />
-    <Compile Include="Caching\WeakConcurrentDictionary.cs" />
-    <Compile Include="Caching\EnhancedMemoryCacheNull.cs" />
-    <Compile Include="Caching\EnhancedMemoryCache.cs" />
-    <Compile Include="Caching\CachingDictionary.cs" />
-    <Compile Include="Caching\ObservableWeakReference.cs" />
-    <Compile Include="Caching\WeakReference.cs" />
-    <Compile Include="CombGuid.cs" />
-    <Compile Include="ComparerBuilder.cs" />
-    <Compile Include="Configuration\ConfigurationElement.cs" />
-    <Compile Include="Configuration\ConfigurationSectionAttribute.cs" />
-    <Compile Include="Configuration\ConfigurationElementCollection.cs" />
-    <Compile Include="Configuration\ConstructorConfigurationElement.cs" />
-    <Compile Include="Configuration\ConfigurationSection.cs" />
-    <Compile Include="Configuration\ParameterCollection.cs" />
-    <Compile Include="Configuration\ParameterElement.cs" />
-    <Compile Include="Configuration\UtilityConfiguration.cs" />
-    <Compile Include="ConsoleHelper.cs" />
-    <Compile Include="CSharpExpressionWriter.cs" />
-    <Compile Include="Globalization\CultureInfoProvider.cs" />
-    <Compile Include="Globalization\GlobalizationExtensions.cs" />
-    <Compile Include="Globalization\CurrencyInfoProvider.cs" />
-    <Compile Include="CyclicQueue.cs" />
-    <Compile Include="DependencyGraph.cs" />
-    <Compile Include="Dictionary.cs" />
-    <Compile Include="EqualityNetwork.cs" />
-    <Compile Include="ExpressionExtensionOverloads.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExpressionExtensionOverloads.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExpressionExtensions.cs" />
-    <Compile Include="Globalization\ExtendedCultureInfo.cs" />
-    <Compile Include="ExtendedInterlocked.cs" />
-    <Compile Include="Formatting\Alignment.cs" />
-    <Compile Include="Formatting\ColorHelper.cs" />
-    <Compile Include="Formatting\ConsoleTextWriter.cs" />
-    <Compile Include="Formatting\FormatWriteContext.cs" />
-    <Compile Include="Formatting\LineType.cs" />
-    <Compile Include="Formatting\ListResolvable.cs" />
-    <Compile Include="Formatting\DictionaryResolvable.cs" />
-    <Compile Include="Formatting\FormatBuilderResolutions.cs" />
-    <Compile Include="Formatting\FormatBuilder.cs" />
-    <Compile Include="Formatting\FormatBuilderConverter.cs" />
-    <Compile Include="Formatting\FormatChunk.cs" />
-    <Compile Include="Formatting\FormatExtensions.cs" />
-    <Compile Include="Formatting\FormatOutput.cs" />
-    <Compile Include="Formatting\FormattedStringWriter.cs" />
-    <Compile Include="Formatting\FuncResolvable.cs" />
-    <Compile Include="Formatting\IColoredTextWriter.cs" />
-    <Compile Include="Formatting\IControllableTextWriter.cs" />
-    <Compile Include="Formatting\IResolvable.cs" />
-    <Compile Include="Formatting\ILayoutTextWriter.cs" />
-    <Compile Include="Formatting\ISerialTextWriter.cs" />
-    <Compile Include="Formatting\ITextWriter.cs" />
-    <Compile Include="Formatting\IWritable.cs" />
-    <Compile Include="Formatting\Layout.cs" />
-    <Compile Include="Formatting\LayoutWrapMode.cs" />
-    <Compile Include="Formatting\FormatTextWriter.cs" />
-    <Compile Include="Formatting\Resolution.cs" />
-    <Compile Include="Formatting\Resolvable.cs" />
-    <Compile Include="Formatting\ResolvableWriteable.cs" />
-    <Compile Include="Formatting\ResolveDelegate.cs" />
-    <Compile Include="Formatting\SerialTextWriter.cs" />
-    <Compile Include="Formatting\TraceTextWriter.cs" />
-    <Compile Include="Globalization\ICultureInfoProvider.cs" />
-    <Compile Include="Globalization\ICurrencyInfoProvider.cs" />
-    <Compile Include="HighPrecisionClock.cs" />
-    <Compile Include="IO\CloseableStream.cs" />
-    <Compile Include="IO\PeekableStream.cs" />
-    <Compile Include="IReadOnlyLookup.cs" />
-    <Compile Include="Array.cs" />
-    <Compile Include="KeyValuePair.cs" />
-    <Compile Include="Mapping.cs" />
-    <Compile Include="ReadOnlyMap.cs" />
-    <Compile Include="ReadOnlyOffsetMap.cs" />
-    <Compile Include="StringMap.cs" />
-    <Compile Include="Threading\AsyncSemaphore.cs" />
-    <Compile Include="Threading\BufferedAction.cs" />
-    <Compile Include="Threading\BufferedActionGeneric.cs">
-      <DependentUpon>BufferedActionGeneric.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="VariableLengthEncoding.cs" />
-    <Compile Include="ModuleInitializer.cs" />
-    <Compile Include="ParameterUsageVisitor.cs" />
-    <Compile Include="Ranges\DurationRange.cs" />
-    <Compile Include="Ranges\InstantRange.cs" />
-    <Compile Include="Ranges\LocalDateRange.cs" />
-    <Compile Include="Ranges\LocalDateTimeRange.cs" />
-    <Compile Include="Ranges\LocalTimeRange.cs" />
-    <Compile Include="Ranges\ZonedDateTimeRange.cs" />
-    <Compile Include="Reflect\InfoHelper.cs" />
-    <Compile Include="ResettableLazy.cs" />
-    <Compile Include="SyncList.cs" />
-    <Compile Include="Threading\AsyncTimer.cs" />
-    <Compile Include="Threading\CancelableTask.cs" />
-    <Compile Include="Threading\ICancelableTask.cs" />
-    <Compile Include="Threading\ThreadLocalCollection.cs" />
-    <Compile Include="ThreadLocal.cs" />
-    <Compile Include="TimeHelpers.cs" />
-    <Compile Include="TupleEnumerable.cs">
-      <DependentUpon>TupleEnumerable.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="IEnumerables.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IEnumerables.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Impersonator.cs" />
-    <Compile Include="IO\OverlappingPipeClientStream.cs" />
-    <Compile Include="IO\OverlappingPipeServerStream.cs" />
-    <Compile Include="IO\OverlappingPipeStream.cs" />
-    <Compile Include="Lists.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Lists.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Queue.cs">
-      <DependentUpon>Queue.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ReferenceComparer.cs" />
-    <Compile Include="Stacks.cs">
-      <DependentUpon>Stacks.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ExtendedTupleOverloads.cs">
-      <DependentUpon>ExtendedTupleOverloads.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ExtendedTupleGeneric.cs" />
-    <Compile Include="Financials\Financial.cs" />
-    <Compile Include="Graphic.cs" />
-    <Compile Include="GraphicExtensions.cs" />
-    <Compile Include="GraphicFormat.cs" />
-    <Compile Include="Grouping.cs" />
-    <Compile Include="HashCollection.cs" />
-    <Compile Include="HashedByteArray.cs" />
-    <Compile Include="IOptional.cs" />
-    <Compile Include="IOrderedLookup.cs" />
-    <Compile Include="ISet.cs" />
-    <Compile Include="KeyComparer.cs" />
-    <Compile Include="Lookup.cs" />
-    <Compile Include="Optional.cs" />
-    <Compile Include="OrderedLookup.cs" />
-    <Compile Include="Ranges\ByteRange.cs" />
-    <Compile Include="Ranges\FinancialRange.cs" />
-    <Compile Include="Ranges\TimeSpanRange.cs" />
-    <Compile Include="Reflect\CastMethod.cs" />
-    <Compile Include="Reflect\Constructor.cs" />
-    <Compile Include="Reflect\Event.cs" />
-    <Compile Include="Reflect\Field.cs" />
-    <Compile Include="Reflect\GenericArgument.cs" />
-    <Compile Include="Reflect\GenericArgumentLocation.cs" />
-    <Compile Include="Reflect\Indexer.cs" />
-    <Compile Include="Reflect\ISignature.cs" />
-    <Compile Include="Reflect\Method.cs" />
-    <Compile Include="Reflect\Property.cs" />
-    <Compile Include="Reflect\ExtendedType.cs" />
-    <Compile Include="Reflect\TypeSearch.cs" />
-    <Compile Include="Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SemanticVersion.cs" />
-    <Compile Include="TaskExtensionsOverloads.cs">
-      <DependentUpon>TaskExtensionsOverloads.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Globalization\CultureHelper.cs" />
-    <Compile Include="Globalization\CurrencyInfo.cs" />
-    <Compile Include="Enumerations\TruncateOptions.cs" />
-    <Compile Include="ExtendedEnum.cs" />
-    <Compile Include="ExtendedEnumGeneric.cs" />
-    <Compile Include="InitialisedSingleton.cs" />
-    <Compile Include="Location\DistanceCalculation.cs" />
-    <Compile Include="Location\LatLng.cs" />
-    <Compile Include="Ranges\DateRange.cs" />
-    <Compile Include="Ranges\DateTimeRange.cs" />
-    <Compile Include="Ranges\DecimalRange.cs" />
-    <Compile Include="Ranges\DoubleRange.cs" />
-    <Compile Include="Enumerations\TriState.cs" />
-    <Compile Include="EqualityBuilder.cs" />
-    <Compile Include="TaskResult.cs" />
-    <Compile Include="Threading\ICancelableTokenSource.cs" />
-    <Compile Include="Threading\ITokenSource.cs" />
-    <Compile Include="Threading\TimedTokenSource.cs" />
-    <Compile Include="Threading\PauseToken.cs" />
-    <Compile Include="Threading\PauseTokenSource.cs" />
-    <Compile Include="Threading\AsyncDebouncedAction.cs" />
-    <Compile Include="Threading\AsyncDebouncedFunction.cs" />
-    <Compile Include="Threading\AsyncLock.cs" />
-    <Compile Include="Threading\AsyncReaderWriterLock.cs" />
-    <Compile Include="Threading\SerializingSynchronizationContext.cs" />
-    <Compile Include="Threading\SynchronizationContextAwaiter.cs" />
-    <Compile Include="Threading\SynchronizedQueue.cs" />
-    <Compile Include="Threading\CancelableTokenSource.cs" />
-    <Compile Include="Threading\TokenSource.cs" />
-    <Compile Include="Threading\WrappedTokenSource.cs" />
-    <Compile Include="UtilityExtensions.cs" />
-    <Compile Include="Interfaces\Caching\ICaching.cs" />
-    <Compile Include="Ranges\IntRange.cs" />
-    <Compile Include="Ranges\LongRange.cs" />
-    <Compile Include="Ranges\Range.cs" />
-    <Compile Include="Ranges\ShortRange.cs" />
-    <Compile Include="Reflection.cs" />
-    <Compile Include="ReflectionOverloads.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReflectionOverloads.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Singleton.cs" />
-    <Compile Include="SqlExtensions.cs" />
-    <Compile Include="Threading\ApmWrap.cs" />
-    <Compile Include="Threading\AsyncResult.cs" />
-    <Compile Include="Threading\ContextStack.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskExtensions.cs" />
-    <Compile Include="ExtendedTuple.cs" />
-    <Compile Include="ValueComparer.cs" />
-    <Compile Include="ReadOnlyWindow.cs" />
-    <Compile Include="Window.cs" />
-    <Compile Include="XObjectComparisonOptions.cs" />
-    <Compile Include="XObjectExtensions.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Resources\iso4217.ccy">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="Actions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Actions.cs</LastGenOutput>
     </None>
-    <None Include="web.config.transform" />
-    <None Include="app.config.transform" />
-    <None Include="ExpressionExtensionOverloads.tt">
+    <None Update="Configuration\Propogate Common Configuration Element Code.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Propogate Common Configuration Element Code.cs</LastGenOutput>
+    </None>
+    <None Update="ExpressionExtensionOverloads.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ExpressionExtensionOverloads.cs</LastGenOutput>
+    </None>
+    <None Update="ExtendedTupleOverloads.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExtendedTupleOverloads.cs</LastGenOutput>
+    </None>
+    <None Update="Funcs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Funcs.cs</LastGenOutput>
+    </None>
+    <None Update="IEnumerables.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IEnumerables.cs</LastGenOutput>
+    </None>
+    <None Update="Lists.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Lists.cs</LastGenOutput>
+    </None>
+    <None Update="Queue.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Queue.cs</LastGenOutput>
+    </None>
+    <None Update="ReflectionOverloads.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ReflectionOverloads.cs</LastGenOutput>
+    </None>
+    <None Update="Stacks.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Stacks.cs</LastGenOutput>
+    </None>
+    <None Update="TaskExtensionsOverloads.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TaskExtensionsOverloads.cs</LastGenOutput>
+    </None>
+    <None Update="Threading\BufferedActionGeneric.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BufferedActionGeneric.cs</LastGenOutput>
+    </None>
+    <None Update="TupleEnumerable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TupleEnumerable.cs</LastGenOutput>
+    </None>
+    <!--TODO: Resources / Designer -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Actions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Actions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Configuration\Propogate Common Configuration Element Code.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Propogate Common Configuration Element Code.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ExpressionExtensionOverloads.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExpressionExtensionOverloads.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ExtendedTupleOverloads.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExtendedTupleOverloads.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Funcs.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Funcs.tt</DependentUpon>
+    </Compile>
+    <Compile Update="IEnumerables.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IEnumerables.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Lists.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lists.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Queue.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Queue.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ReflectionOverloads.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReflectionOverloads.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Stacks.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Stacks.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TaskExtensionsOverloads.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TaskExtensionsOverloads.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Threading\BufferedActionGeneric.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BufferedActionGeneric.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TupleEnumerable.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TupleEnumerable.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+<!-- TODO: Format of these -->
+  <!-- <ItemGroup>
+    <None Include="Resources\iso4217.ccy">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\tzdb.nzd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="TupleEnumerable.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TupleEnumerable.cs</LastGenOutput>
-    </None>
-    <None Include="IEnumerables.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IEnumerables.cs</LastGenOutput>
-    </None>
-    <None Include="Lists.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Lists.cs</LastGenOutput>
-    </None>
-    <None Include="Queue.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Queue.cs</LastGenOutput>
-    </None>
-    <None Include="Stacks.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Stacks.cs</LastGenOutput>
-    </None>
-    <None Include="ExtendedTupleOverloads.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ExtendedTupleOverloads.cs</LastGenOutput>
-    </None>
-    <None Include="TaskExtensionsOverloads.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TaskExtensionsOverloads.cs</LastGenOutput>
-    </None>
-    <None Include="ReflectionOverloads.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ReflectionOverloads.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+    <None Include="web.config.transform" />
+    <None Include="app.config.transform" />
+  </ItemGroup> -->
+
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Actions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Actions.cs</LastGenOutput>
-    </None>
-    <None Include="Funcs.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Funcs.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Configuration\Propogate Common Configuration Element Code.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Propogate Common Configuration Element Code.cs</LastGenOutput>
-    </None>
-    <None Include="Threading\BufferedActionGeneric.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BufferedActionGeneric.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
