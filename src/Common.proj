@@ -112,10 +112,10 @@
 
     <!-- Import utilities if Utilities is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('Utilities'))">
-      <UtilityBuildTasks>$(SlnDir)WebApplications.Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
+      <UtilityBuildTasks>$(SlnDir)WebApplications.Utilities.BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
     </PropertyGroup>
     <ItemGroup Condition="'$(UtilityBuildTasks)'!='' AND !Exists('$(UtilityBuildTasks)')">
-      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities\BuildTasks\WebApplications.Utilities.BuildTasks.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.BuildTasks\WebApplications.Utilities.BuildTasks.csproj">
         <Properties>Configuration=Release;Platform=AnyCPU</Properties>
       </ProjectsToBuild>
     </ItemGroup>
@@ -146,16 +146,16 @@
 
     <!-- Import PerfSetup if the PerfSetup constant is defined -->
     <PropertyGroup Condition="$(DefineConstants.Contains('PerfSetup'))">
-      <PerfSetupTool>$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
-      <PerfSetupTool64>$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool64>
+      <PerfSetupTool>$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
+      <PerfSetupTool64>$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool64>
     </PropertyGroup>
     <ItemGroup Condition="'$(PerfSetupTool)'!='' AND !Exists('$(PerfSetupTool)')">
-      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
         <Properties>Configuration=Release;Platform=x86</Properties>
       </ProjectsToBuild>
     </ItemGroup>
     <ItemGroup Condition="'$(PerfSetupTool64)'!='' AND !Exists('$(PerfSetupTool64)')">
-      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
+      <ProjectsToBuild Include="$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\WebApplications.Utilities.Performance.Tools.PerfSetup.csproj">
         <Properties>Configuration=Release;Platform=x64</Properties>
       </ProjectsToBuild>
     </ItemGroup>
@@ -192,11 +192,11 @@
 
       <!-- Reset tool locations -->
       <PropertyGroup>
-        <UtilityBuildTasks Condition="$(DefineConstants.Contains('Utilities'))">$(SlnDir)WebApplications.Utilities\BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
+        <UtilityBuildTasks Condition="$(DefineConstants.Contains('Utilities'))">$(SlnDir)WebApplications.Utilities.BuildTasks\bin\Release\AnyCPU\WebApplications.Utilities.BuildTasks.dll</UtilityBuildTasks>
         <ILMergeBuildTask Condition="$(DefineConstants.Contains('ILMerge'))">$(SlnDir)ILMerge.Build.Tasks\bin\Release\AnyCPU\ILMerge.Build.Task.dll</ILMergeBuildTask>
         <InjectModuleInitializerTool Condition="$(DefineConstants.Contains('ModuleInitializer'))">$(SlnDir)WebApplications.Utilities.Initializer\bin\Release\AnyCPU\Merged\WebApplications.Utilities.Initializer.dll</InjectModuleInitializerTool>
-        <PerfSetupTool Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
-        <PerfSetupTool64 Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance\PerfSetup\bin\Release\Merged\PerfSetup64.exe</PerfSetupTool64>
+        <PerfSetupTool Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\bin\Release\Merged\PerfSetup32.exe</PerfSetupTool>
+        <PerfSetupTool64 Condition="$(DefineConstants.Contains('PerfSetup'))">$(SlnDir)WebApplications.Utilities.Performance.Tools.PerfSetup\bin\Release\Merged\PerfSetup64.exe</PerfSetupTool64>
       </PropertyGroup>
 
       <!-- Verify pre-requisits -->

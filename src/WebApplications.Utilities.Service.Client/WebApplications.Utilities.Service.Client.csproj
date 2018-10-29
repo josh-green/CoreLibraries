@@ -8,14 +8,14 @@
     <AssemblyName>WebApplications.Utilities.Service.Client</AssemblyName>
     <DefineConstants>PerfSetup;CopyResources</DefineConstants>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\Common.proj" />
+  <Import Project="$(MSBuildThisFileDirectory)..\Common.proj" />
   <ItemGroup>
     <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
+      <HintPath>..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -69,15 +69,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WebApplications.Utilities.Logging\WebApplications.Utilities.Logging.csproj">
+    <ProjectReference Include="..\WebApplications.Utilities.Logging\WebApplications.Utilities.Logging.csproj">
       <Project>{0eba7604-0bdb-438e-967f-7dfe93e6abd5}</Project>
       <Name>WebApplications.Utilities.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\WebApplications.Utilities.Service.Common.csproj">
+    <ProjectReference Include="..\WebApplications.Utilities.Service.Common\WebApplications.Utilities.Service.Common.csproj">
       <Project>{b365ad50-598a-4d1b-8656-1f0f8adcdbc8}</Project>
       <Name>WebApplications.Utilities.Service.Common</Name>
     </ProjectReference>
