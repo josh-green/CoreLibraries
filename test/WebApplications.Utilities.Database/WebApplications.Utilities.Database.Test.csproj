@@ -8,7 +8,7 @@
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <DefineConstants>CopyResources</DefineConstants>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\Common.proj" />
+  <Import Project="$(MSBuildThisFileDirectory)..\..\src\Common.proj" />
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -17,15 +17,15 @@
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
+      <HintPath>..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -88,19 +88,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
       <Link>SqlServerTypes\x64\msvcr100.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
       <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
       <Link>SqlServerTypes\x86\msvcr100.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
       <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -121,23 +121,23 @@
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WebApplications.Utilities.Logging\WebApplications.Utilities.Logging.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities.Logging\WebApplications.Utilities.Logging.csproj">
       <Project>{0eba7604-0bdb-438e-967f-7dfe93e6abd5}</Project>
       <Name>WebApplications.Utilities.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebApplications.Utilities.Performance\WebApplications.Utilities.Performance.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities.Performance\WebApplications.Utilities.Performance.csproj">
       <Project>{04220e31-53f6-453f-80c5-0e2d49776d36}</Project>
       <Name>WebApplications.Utilities.Performance</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebApplications.Testing\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{e41cd12c-805c-4493-a45a-9bc917d7b240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApplications.Utilities.Database.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities.Database\WebApplications.Utilities.Database.csproj">
       <Project>{371CE56A-0251-41DA-8EF5-72A69E290CB9}</Project>
       <Name>WebApplications.Utilities.Database</Name>
     </ProjectReference>

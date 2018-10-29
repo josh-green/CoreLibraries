@@ -6,12 +6,18 @@
     <RootNamespace>WebApplications.Testing.Test</RootNamespace>
     <AssemblyName>WebApplications.Testing.Test</AssemblyName>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\Common.proj" />
+  <Import Project="$(MSBuildThisFileDirectory)..\..\src\Common.proj" />
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -35,7 +41,7 @@
     <Compile Include="TestUnicode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{E41CD12C-805C-4493-A45A-9BC917D7B240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>

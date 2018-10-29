@@ -8,7 +8,7 @@
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <DefineConstants>CopyResources</DefineConstants>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\Common.proj" />
+  <Import Project="$(MSBuildThisFileDirectory)..\..\src\Common.proj" />
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -29,11 +29,11 @@
     <Compile Include="TestPowerShell.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApplications.Utilities.PowerShell.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities.PowerShell\WebApplications.Utilities.PowerShell.csproj">
       <Project>{FDF4F262-B182-49DB-9A39-6D487EA058FD}</Project>
       <Name>WebApplications.Utilities.PowerShell</Name>
     </ProjectReference>

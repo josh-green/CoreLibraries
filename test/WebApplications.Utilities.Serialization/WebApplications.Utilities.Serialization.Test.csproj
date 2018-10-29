@@ -14,15 +14,15 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>12.0</OldToolsVersion>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)..\..\Common.proj" />
+  <Import Project="$(MSBuildThisFileDirectory)..\..\src\Common.proj" />
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
+      <HintPath>..\..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -47,15 +47,15 @@
     <Compile Include="XmlFormatterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WebApplications.Testing\WebApplications.Testing.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Testing\WebApplications.Testing.csproj">
       <Project>{e41cd12c-805c-4493-a45a-9bc917d7b240}</Project>
       <Name>WebApplications.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebApplications.Utilities\WebApplications.Utilities.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities\WebApplications.Utilities.csproj">
       <Project>{2931c698-6123-49bc-81fd-f72a4c1415ea}</Project>
       <Name>WebApplications.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApplications.Utilities.Serialization.csproj">
+    <ProjectReference Include="..\..\src\WebApplications.Utilities.Serialization\WebApplications.Utilities.Serialization.csproj">
       <Project>{686798D4-CC9C-460F-937F-28933CC53E09}</Project>
       <Name>WebApplications.Utilities.Serialization</Name>
     </ProjectReference>
